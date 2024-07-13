@@ -7,7 +7,6 @@ import { useAuth } from "../../Context/Authconstants";
 import { useCourseContext } from "../../Context/CourseContextconstants";
 import { fetchCourse } from "../../Context/CourseContextactions";
 
-
 interface Question {
   _id: string; 
   question: string;
@@ -15,7 +14,7 @@ interface Question {
   correctAnswer: string;
 }
 
-export default function  AssessmentPage () {
+export default function AssessmentPage() {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
@@ -29,7 +28,7 @@ export default function  AssessmentPage () {
 
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-  const token = localStorage.getItem('token')
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
     if (courseId && (!contextState.course || contextState.course._id !== courseId)) {
@@ -39,12 +38,11 @@ export default function  AssessmentPage () {
 
   useEffect(() => {
     const fetchQuestions = async () => {
-        const response = await axios.get(`http://localhost:4000/asessments/${courseId}`, {
-          headers: { Authorization: `Bearer ${token}`}
-        });
-        const data = response.data.Questions;
-        setQuestions(data);
-      
+      const response = await axios.get(`https://server-y9oe.onrender.com/asessments/${courseId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      const data = response.data.Questions;
+      setQuestions(data);
     };
 
     fetchQuestions();
@@ -62,7 +60,7 @@ export default function  AssessmentPage () {
       setSelectedAnswer(null);
       if (currentQuestionIndex + 1 < questions.length) {
         setCurrentColorIndex((prevIndex) => (prevIndex + 1) % colors.length);
-        setCurrentQuestionIndex((prevIndex) => (prevIndex + 1));
+        setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
       } else {
         setAssessmentComplete(true);
       }
@@ -70,16 +68,28 @@ export default function  AssessmentPage () {
   };
 
   const handleDeleteQuestion = async (questionId: string) => {
-
-    
-      await axios.delete(`http://localhost:4000/asessments/${questionId}`,{
-        headers: { Authorization: `Bearer ${token}`}
-      });
-      setQuestions((prevQuestions) => prevQuestions.filter((q) => q._id !== questionId));
+    await axios.delete(`https://server-y9oe.onrender.com/asessments/${questionId}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    setQuestions((prevQuestions) => prevQuestions.filter((q) => q._id !== questionId));
   };
 
   if (!questions.length) {
-    return <div>Loading...</div>;
+    return (
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100vh',
+          textAlign: 'center',
+        }}
+      >
+        <Typography variant="h5" sx={{ color: '#555' }}>
+          {state.loading ? 'Loading... please wait' : 'There are no assessments for this course.'}
+        </Typography>
+      </Box>
+    );
   }
 
   return (
@@ -93,7 +103,7 @@ export default function  AssessmentPage () {
         alignItems: "center",
         justifyContent: "center",
         width: isSmallScreen ? '90%' : 'auto',
-        margin: isSmallScreen ? '0 auto' : 'initial', 
+        margin: isSmallScreen ? '0 auto' : 'initial',
       }}
     >
       <Typography variant="h4" gutterBottom>Assessment Time!</Typography>
@@ -105,7 +115,7 @@ export default function  AssessmentPage () {
               padding: '20px',
               backgroundColor: "#CD070D",
               borderRadius: '10px',
-              width: isSmallScreen ? '100%' : '400px', // Adjust width for small screens
+              width: isSmallScreen ? '100%' : '400px',
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -118,7 +128,7 @@ export default function  AssessmentPage () {
           <Box
             sx={{
               display: 'grid',
-              gridTemplateColumns: isSmallScreen ? '1fr' : 'repeat(2, 1fr)', 
+              gridTemplateColumns: isSmallScreen ? '1fr' : 'repeat(2, 1fr)',
               gap: '10px',
               marginTop: '20px'
             }}
@@ -162,5 +172,5 @@ export default function  AssessmentPage () {
         <Typography variant="h6" gutterBottom>Assessment Complete! Thank you for your participation.</Typography>
       )}
     </Box>
-  )
+  );
 }

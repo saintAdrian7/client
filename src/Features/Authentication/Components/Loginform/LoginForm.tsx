@@ -4,7 +4,6 @@ import { useAuth } from "../../../../Context/Authconstants";
 import { LoginUser } from "../../../../Context/Authactions";
 
 
-
 interface LoginFormProps{
     toggleRegister():void
 }

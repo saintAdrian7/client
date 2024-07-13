@@ -30,10 +30,10 @@ export default function CreateAssessment() {
     event.preventDefault();
     try {
       const token = localStorage.getItem('token')
-      const response = await axios.post(`http://localhost:4000/asessments/${courseId}`, formState,{
+      const response = await axios.post(`https://server-y9oe.onrender.com/asessments/${courseId}`, formState,{
         headers: { Authorization: `Bearer ${token}`}
       });
-      await axios.get(`http://localhost:4000/updateQuestions/${courseId}`, {
+      await axios.get(`https://server-y9oe.onrender.com/updateQuestions/${courseId}`, {
         headers: { Authorization: `Bearer ${token}`}
       })
       setFeedback("Assessment created successfully!");
@@ -101,6 +101,7 @@ export default function CreateAssessment() {
             Create Assessment
           </Button>
           {feedback && <Typography variant="body1" color={feedback.includes("Failed") ? "error" : "success"}>{feedback}</Typography>}
+          {}
         </Box>
       </form>
     </Box>

@@ -37,7 +37,6 @@ return(
         content={login ? <LoginForm toggleRegister={toggleLogin}/> : <RegisterForm toggleLogin={toggleLogin}/>}
 
         toggleModal={closeModal}
-        
         />
   </>
 )

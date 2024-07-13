@@ -26,7 +26,7 @@ const handleDeleteCourse = async () => {
     
     if (confirmDelete) {
       
-        await axios.delete(`http://localhost:4000/Courses/${courseId}`,{
+        await axios.delete(`https://server-y9oe.onrender.com/Courses/${courseId}`,{
           headers: { Authorization: `Bearer ${token}`}
         });
         navigate('/');

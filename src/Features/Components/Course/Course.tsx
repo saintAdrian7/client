@@ -59,10 +59,10 @@ const Course = () => {
       const moduleId = module._id;
       const courseId = contextState.course?._id;
       const token = getToken()
-      await axios.delete(`http://localhost:4000/modules/${moduleId}`, {
+      await axios.delete(`https://server-y9oe.onrender.com/modules/${moduleId}`, {
         headers: { Authorization: `Bearer ${token}`}
       });
-      await axios.get(`http://localhost:4000/update/${courseId}`, {
+      await axios.get(`https://server-y9oe.onrender.com/update/${courseId}`, {
         headers: { Authorization: `Bearer ${token}`}
       });
       fetchCourse(dispatch, courseId);
@@ -84,7 +84,7 @@ const Course = () => {
   const ErrorComponent = () => (
     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
       <Typography variant="h5" color="error">
-        Error loading the course!
+        Error loading the course! Try refreshing the page!
       </Typography>
     </Box>
   );

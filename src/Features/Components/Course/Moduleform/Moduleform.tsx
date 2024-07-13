@@ -60,10 +60,10 @@ const ModuleForm: React.FC<ModuleFormProps> = ({ setDisplayModuleForm, initialDa
     const courseId = contextState.course?._id;
 
     try {
-      await axios.patch(`http://localhost:4000/modules/${moduleId}`, moduleData,{
+      await axios.patch(`https://server-y9oe.onrender.com/modules/${moduleId}`, moduleData,{
         headers: { Authorization: `Bearer ${token}`}
       });
-      await axios.get(`http://localhost:4000/update/${courseId}`, {
+      await axios.get(`https://server-y9oe.onrender.com/update/${courseId}`, {
         headers: { Authorization: `Bearer ${token}`}
       });
       setDisplayModuleForm();
@@ -87,14 +87,23 @@ const ModuleForm: React.FC<ModuleFormProps> = ({ setDisplayModuleForm, initialDa
         };
 
         const courseId = contextState.course?._id;
+        const token = localStorage.getItem('token')
+        const config = {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
 
-        await axios.post("http://localhost:4000/modules", moduleData);
-        await axios.get(`http://localhost:4000/update/${courseId}`);
+        await axios.post("https://server-y9oe.onrender.com/modules/", moduleData, config);
+        await axios.get(`https://server-y9oe.onrender.com/update/${courseId}`, {
+          headers: { Authorization: `Bearer ${token}`}
+        });
         setDisplayModuleForm();
         setError(false);
         fetchCourse(dispatch, courseId);
       }
     } catch (error) {
+      console.log(error)
       setError(true);
     }
   };
