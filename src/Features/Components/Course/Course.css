@@ -1,0 +1,242 @@
+.course-content{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+.course-details{
+  margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 20px;
+    background-image: linear-gradient(180deg, #FABB14 0%, #E86E0F 100%);
+    box-shadow: 0, 0, 5px;
+    min-height: 500px;
+    height: fit-content;
+    width: 50%;
+}
+.course-title{
+    width: 295px;
+    height: fit-content;
+    background-color: #E7690F;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.course-title h1{
+font-family: Inder;
+font-size: 40px;
+font-weight: 400;
+line-height: 50px;
+letter-spacing: 0.05em;
+text-align: left;
+color:  #FFFFFF;
+}
+
+.course-details p{
+font-family: Poppins;
+font-size: 20px;
+font-weight: 600;
+line-height: 30px;
+letter-spacing: 0.1em;
+text-align: left;
+color: #000000;
+}
+
+.course-details span{
+font-family: Poppins;
+font-size: 20px;
+font-weight: 600;
+line-height: 30px;
+letter-spacing: 0.1em;
+text-align: left;
+color:#CD070D;
+text-decoration: underline;
+}
+
+.students{
+font-family: Poppins;
+font-size: 24px;
+font-weight: 600;
+line-height: 36px;
+letter-spacing: 0.1em;
+text-align: start;
+}
+
+.instructor-details{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+.instructor-img{
+    border-radius: 70%;
+    margin-right: 30px;
+}
+.instructor-details p{
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0.1em;
+    color: #CD070D;
+    
+}
+
+
+
+.course-modules{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 16px;
+    background-image: linear-gradient(180deg, #FABB14 0%, #E86E0F 100%);
+    box-shadow: 0, 0, 5px;
+    min-height: 500px;
+    height: fit-content;
+    width: 60%;
+
+}
+
+.separator{
+    background-color: #FFFFFF;
+    height: 100vh;
+    width: 5%;
+}
+
+.modules-container{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+.module{
+    background-color: #D42A2A;
+    width: 700px;
+    height: 118px;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.module-title{
+font-family: Inder;
+font-size: 36px;
+font-weight: 400;
+line-height: 45px;
+text-align: left;
+color: #FFFFFF;
+
+}
+
+.module-content-details{
+font-family: poppins;
+font-weight: 400;
+text-align: left;
+color: #FFFFFF;
+}
+
+.module.active {
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  
+  .module:hover {
+    background-color: #e0e0e0;
+    color: #000000;
+  }
+
+  .module-title:hover{
+    color: #000000;
+  }
+  
+
+  .back-to-btn{
+    background-color: #D42A2A;
+    color: #f0f0f0;
+    border-radius: 10px;
+    border: none;
+  }
+
+  .back-to-btn:hover {
+    background-color: #e0e0e0;
+    color:#D42A2A ;
+  }
+
+  .module-title.active{
+    color: #000000;
+  }
+
+  .toggle-module-form-btn{
+    margin-top: 60px;
+    border: none;
+    background-color: #D42A2A;
+    color: #e0e0e0;
+    font-family: inder;
+    font-weight: bolder;
+    border-radius: 10px;
+    padding: 16px;
+    z-index: 6;
+    
+  }
+
+  .toggle-module-form-btn:hover{
+    background-color: #e0e0e0;
+    color: #D42A2A;
+
+  }
+
+  .update-module-btn{
+    font-family: inder;
+    font-weight: bold;
+    background-color: #e0e0e0;
+    color: #000000;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px black; 
+  }
+
+  .update-module-btn:hover{
+    background-color: #000000;
+    color: #e0e0e0;
+  }
+  .delete-module-btn{
+    font-family: inder;
+    font-weight: bold;
+    background-color: #e0e0e0;
+    color: #000000;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px black; 
+  }
+
+  .delete-module-btn:hover{
+    background-color: #000000;
+    color: #e0e0e0;
+  }
+
+  .take-asessment-btn{
+    margin-top: 20px;
+    border: none;
+    background-color: #D42A2A;
+    color: #e0e0e0;
+    font-family: inder;
+    font-weight: bolder;
+    border-radius: 10px;
+    padding: 16px;
+}
+  

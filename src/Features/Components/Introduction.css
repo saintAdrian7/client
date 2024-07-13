@@ -1,0 +1,35 @@
+/* Introduction.css */
+.introduction {
+    padding: 20px;
+    text-align: center;
+    background-color: linear-gradient(180deg, #FBBC14 0%, #E7680F 100%);
+    border-radius: 8px;
+    margin: 20px auto;
+    margin-top: 60px;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.introduction h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.introduction p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+.get-started-button {
+    background-color: #6a1b9a; /* Purple color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.get-started-button:hover {
+    background-color: #4a148c; /* Darker purple */
+}

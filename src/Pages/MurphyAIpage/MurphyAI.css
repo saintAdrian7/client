@@ -1,0 +1,21 @@
+.chatbot-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width:850px;
+    height:450px;
+
+}
+
+@media screen and (max-width:1000px) {
+    .chatbot-container{
+    width: 90%;
+      position: absolute;
+      top: 15%;
+      left: 2%;
+    }
+    
+  }

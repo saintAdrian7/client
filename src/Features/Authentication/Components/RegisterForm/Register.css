@@ -1,0 +1,86 @@
+.register-form{
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: start;
+padding: 32px;
+}
+
+
+.register-form-title{
+font-family: Inder;
+font-size: 36px;
+font-weight: 400;
+line-height: 45px;
+letter-spacing: 0.1em;
+text-align: left;
+color: #FFFFFF;
+}
+.register-form h3{
+    font-family: Inder;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 45px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    
+}
+
+.register-form-error {
+    color: black;
+    font-weight: bold;
+}
+
+.register-form-input-group{
+    width: 100%;
+    margin-bottom: 16px;
+
+}
+
+.register-form-input{
+    width: 100%;
+    height: 2.5rem;
+    font-size: 1.25rem;
+    padding: 5px;
+}
+
+.register-form-input::placeholder{
+    color:black;
+}
+
+.register-form-input:focus{
+    outline: none;
+}
+
+.register-form-button{
+    border: none;
+    border-radius: 10px;
+    color: #FFFFFF;
+    background-color: #CB4C4E;
+    font-family: Inder;
+    font-weight: bolder;
+    padding: 10px;
+
+}
+
+.register-form-button:hover{
+    background-color: #FFFFFF;
+    color: #CB4C4E;
+}
+
+.register-form-register-message{
+    color: #FFFFFF;
+}
+
+.register-form-toggle{
+    color: black;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.register-form-toggle:hover{
+    font-size: 1.2rem;
+    cursor: pointer;
+}

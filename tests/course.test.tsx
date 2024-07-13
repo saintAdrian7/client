@@ -1,0 +1,43 @@
+import { test} from '@playwright/test';
+
+test('course interaction', async ({ page }) => {
+  await page.pause()
+  await page.goto('http://localhost:5173/CreateCourse/Course/66927df382869bf1f0438219');
+  await page.getByRole('button', { name: 'Login or SignUp' }).click();
+  await page.getByPlaceholder('Email').click();
+  await page.getByPlaceholder('Email').fill('adriankimani5@gmail.com');
+  await page.getByPlaceholder('Password').click();
+  await page.getByPlaceholder('Password').fill('1234567');
+  await page.getByRole('button', { name: 'Login', exact: true }).click();
+  await page.getByPlaceholder('Password').click();
+  await page.getByPlaceholder('Password').fill('12345678');
+  await page.getByRole('button', { name: 'Login', exact: true }).click();
+  await page.getByRole('button', { name: 'Add Course Module Here' }).click();
+  await page.getByPlaceholder('Enter module title...').click();
+  await page.getByRole('button', { name: 'Hide Module Form' }).click();
+  await page.getByRole('button', { name: 'Create or add questions for' }).click();
+  await page.getByLabel('Question *').click();
+  await page.getByLabel('Question *').fill('testing');
+  await page.getByRole('button', { name: 'Add Answer' }).click();
+  await page.getByLabel('Answer 1 *').click();
+  await page.getByLabel('Answer 1 *').fill('1');
+  await page.getByRole('button', { name: 'Add Answer' }).click();
+  await page.getByLabel('Answer 2 *').click();
+  await page.getByLabel('Answer 2 *').fill('2');
+  await page.getByRole('button', { name: 'Add Answer' }).click();
+  await page.getByLabel('Answer 3 *').click();
+  await page.getByLabel('Answer 3 *').fill('3');
+  await page.getByRole('button', { name: 'Add Answer' }).click();
+  await page.getByLabel('Answer 4 *').click();
+  await page.getByLabel('Answer 4 *').fill('4');
+  await page.getByLabel('Correct Answer *').click();
+  await page.getByLabel('Correct Answer *').fill('3');
+  await page.getByRole('button', { name: 'Create Assessment' }).click();
+  await page.goto('http://localhost:5173/CreateCourse/Course/66927df382869bf1f0438219');
+  await page.getByRole('button', { name: 'Take Assessment' }).click();
+  await page.getByRole('button', { name: '3' }).click();
+  await page.goto('http://localhost:5173/CreateCourse/Course/66927df382869bf1f0438219');
+  await page.getByRole('button', { name: 'Take Assessment' }).click();
+  await page.getByRole('button', { name: 'Delete Question' }).click();
+  await page.getByRole('button', { name: 'Log Out' }).click();
+});
