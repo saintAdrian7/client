@@ -5,6 +5,7 @@ import { Box, CircularProgress} from '@mui/material';
 import { useAuth } from "./Context/Authconstants";
 import { fetchUser } from "./Context/Authactions";
 import MurphyAI from "./Pages/MurphyAIpage/MurphyAI";
+import AvailableCourses from "./Pages/AvailableCourses";
 
 const HomePage = React.lazy(() => import("./Pages/Homepage/Homepage"));
 const Layoutpage = React.lazy(() => import("./Pages/Layoutpage/Layoutpage"));
@@ -35,8 +36,9 @@ function App() {
       <React.Suspense fallback={<LoadingComponent/>}>
         <Routes>
           <Route path="/" element={<Layoutpage />}>
-            <Route path="/Homepage" element={<HomePage />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/CreateCourse/Course/:courseId" element={state.loggedInUser ? <Course /> : <LoginProtect />} />
+            <Route path="/courses" element={<AvailableCourses />} />
             <Route path="/CreateCourse" element={state.loggedInUser ? <CourseForm /> : <LoginProtect />} />
             <Route path="/assessment/:courseId" element={state.loggedInUser ? <AssessmentPage /> : <LoginProtect />} />
             <Route path="/assessment/createform/:courseId" element={state.loggedInUser ? <CreateAssessment /> : <LoginProtect />} />
