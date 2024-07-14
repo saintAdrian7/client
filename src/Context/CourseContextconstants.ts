@@ -16,7 +16,6 @@ export interface Course {
   
   export interface CourseState {
     course: Course | null;
-    courses: Course[];
     loading: boolean;
     error: boolean;
   }
@@ -24,7 +23,6 @@ export interface Course {
   export type CourseAction =
     | { type: 'FETCH_COURSE_REQUEST' }
     | { type: 'FETCH_COURSE_SUCCESS', payload: Course }
-    | {type: 'FETCH_COURSES_SUCCESS', payload: Course[]}
     | { type: 'FETCH_COURSE_FAILURE' }
     | { type: 'CREATE_COURSE_REQUEST' }
     | { type: 'CREATE_COURSE_SUCCESS', payload: Course }
@@ -32,7 +30,6 @@ export interface Course {
   
  export  const initialCourseState: CourseState = {
     course: null,
-    courses: [],
     loading: false,
     error: false,
   };
@@ -49,8 +46,6 @@ export const CourseContext = createContext<{
         return { ...contextState, loading: true, error: false };
       case 'FETCH_COURSE_SUCCESS':
         return { ...contextState, loading: false, error: false, course: action.payload };
-        case 'FETCH_COURSES_SUCCESS':
-          return { ...contextState, loading: false, error: false, courses: action.payload };  
       case 'FETCH_COURSE_FAILURE':
         return { ...contextState, loading: false, error: true };
       case 'CREATE_COURSE_REQUEST':

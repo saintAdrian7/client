@@ -13,7 +13,7 @@ const Introduction = () => {
                 Whether you are looking to learn something new or enhance your existing knowledge, we have the resources 
                 you need to succeed. Explore our courses, connect with instructors, and join a community of learners today!
             </p>
-            <Link to="/CourseList">
+            <Link to="/CreateCourse">
                 <button className="get-started-button">Let's get started</button>
             </Link>
         </div>

@@ -47,7 +47,7 @@ export const MuiNavbar = () => {
     };
 
     const handleHome = () => {
-        navigate('/CourseList');
+        navigate('/Homepage');
         setSidebarOpen(false);
     };
 
@@ -73,7 +73,7 @@ export const MuiNavbar = () => {
     const searchCourses = async () => {
         setLoading(true);
         try {
-            const response = await axios.get(`http://localhost:4000/Courses//courses/search?q=${searchQuery}`);
+            const response = await axios.get(`https://server-y9oe.onrender.com/Courses//courses/search?q=${searchQuery}`);
             setSearchResults(response.data);
         } catch (error) {
             console.error("Error searching courses:", error);
@@ -83,7 +83,7 @@ export const MuiNavbar = () => {
     };
 
     const handleContactUs = () => {
-        window.location.href = 'https://contact-us-0c4c53.zapier.app/form'; 
+        window.location.href = 'https://contact-us-0c4c53.zapier.app/form'; // Redirect to Contact Us page
     };
 
     const courseColors = ['#E7690F', '#94B748', '#029EDC', '#FB667C'];
