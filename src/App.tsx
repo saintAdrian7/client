@@ -36,7 +36,7 @@ function App() {
       <React.Suspense fallback={<LoadingComponent/>}>
         <Routes>
           <Route path="/" element={<Layoutpage />}>
-            <Route path="/Homepage" element={<HomePage />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/CreateCourse/Course/:courseId" element={state.loggedInUser ? <Course /> : <LoginProtect />} />
             <Route path="/CreateCourse" element={state.loggedInUser ? <CourseForm /> : <LoginProtect />} />
             <Route path="/assessment/:courseId" element={state.loggedInUser ? <AssessmentPage /> : <LoginProtect />} />

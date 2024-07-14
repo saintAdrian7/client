@@ -47,7 +47,7 @@ export const MuiNavbar = () => {
     };
 
     const handleHome = () => {
-        navigate('/Homepage');
+        navigate('/CourseList');
         setSidebarOpen(false);
     };
 
