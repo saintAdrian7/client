@@ -7,7 +7,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import ContactMailIcon from '@mui/icons-material/ContactMail'; // Import ContactMailIcon
+import ContactMailIcon from '@mui/icons-material/ContactMail'; 
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/Authconstants";
 import axios from "axios";
@@ -83,7 +83,7 @@ export const MuiNavbar = () => {
     };
 
     const handleContactUs = () => {
-        window.location.href = 'https://contact-us-0c4c53.zapier.app/form'; // Redirect to Contact Us page
+        window.location.href = 'https://contact-us-0c4c53.zapier.app/form'; 
     };
 
     const courseColors = ['#E7690F', '#94B748', '#029EDC', '#FB667C'];
