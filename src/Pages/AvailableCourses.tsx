@@ -25,7 +25,7 @@ const AvailableCourses: React.FC = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get<Course[]>('http://localhost:4000/courses');
+        const response = await axios.get<Course[]>('https://server-y9oe.onrender.com/courses');
         setCourses(response.data);
       } catch (error) {
         console.error('Error fetching courses', error);
@@ -40,7 +40,6 @@ const AvailableCourses: React.FC = () => {
       <Typography variant="h4" gutterBottom>
         Available Courses
       </Typography>
-      {/* <SearchBar setCourses={setCourses}  /> */}
       <Grid container spacing={2} sx={{ marginTop: 2 }}>
         {courses.map((course) => (
           <Grid item xs={12} sm={6} md={4} key={course._id}>
